@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const BUILD_DIR = path.join(__dirname, 'app', 'assets', 'javascripts', 'admin');
 const SRC_DIR = path.resolve(__dirname, 'frontend');
+const BUILD_DIR = path.join(__dirname, 'app', 'assets', 'javascripts');
 
 module.exports = (env = {}) => {
   return {
@@ -11,7 +11,7 @@ module.exports = (env = {}) => {
     },
     output: {
       path: BUILD_DIR,
-      filename: '[name].bundle.js'
+      filename: 'admin_bundle.js'
     },
     // watch: true,
     devtool: 'source-map',

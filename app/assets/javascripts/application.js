@@ -14,4 +14,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= stub admin
+//= stub admin_bundle.js
