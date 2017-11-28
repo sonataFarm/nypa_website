@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const BUILD_DIR = path.join(__dirname, 'app', 'assets', 'javascripts');
+const BUILD_DIR = path.join(__dirname, 'app', 'assets', 'javascripts', 'admin');
 const SRC_DIR = path.resolve(__dirname, 'frontend');
 
 module.exports = (env = {}) => {
