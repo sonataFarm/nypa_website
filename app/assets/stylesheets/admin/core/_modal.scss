@@ -1,3 +1,6 @@
+@import '../bootstrap-variables';
+@import './variables';
+
 @each $color, $value in $theme-colors {
   .modal-#{$color} {
 

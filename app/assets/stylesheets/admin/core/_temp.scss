@@ -1,3 +1,6 @@
+@import '../bootstrap-variables';
+@import './variables';
+
 .pagination-datatables, .pagination {
   li {
     @extend .page-item;

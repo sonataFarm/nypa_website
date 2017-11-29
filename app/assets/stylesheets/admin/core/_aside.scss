@@ -1,3 +1,6 @@
+@import '../bootstrap-variables';
+@import './variables';
+
 .aside-menu {
   z-index: $zindex-sticky - 1;
   width: $aside-menu-width;

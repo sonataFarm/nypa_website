@@ -1,3 +1,6 @@
+@import '../bootstrap-variables';
+@import './variables';
+
 // IE10&11 Flexbox fix
 @media all and (-ms-high-contrast:none) {
   html {
