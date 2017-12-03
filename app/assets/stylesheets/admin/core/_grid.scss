@@ -1,6 +1,7 @@
 @import './mixins';
 @import '../bootstrap-variables';
 @import './variables';
+@import 'bootstrap';
 
 .row.row-equal {
   padding-right: ($grid-gutter-width / 4);

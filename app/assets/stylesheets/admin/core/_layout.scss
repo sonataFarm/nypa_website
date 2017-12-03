@@ -1,6 +1,7 @@
 @import './mixins';
 @import '../bootstrap-variables';
 @import './variables';
+@import 'bootstrap';
 
 // IE10&11 Flexbox fix
 @media all and (-ms-high-contrast:none) {

@@ -1,6 +1,7 @@
 @import './mixins';
 @import '../bootstrap-variables';
 @import './variables';
+@import 'bootstrap';
 
 @each $color, $value in $theme-colors {
   .modal-#{$color} {
