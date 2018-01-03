@@ -38,6 +38,7 @@ gem 'annotate'
 gem 'faker'
 gem 'jquery-rails'
 gem 'bcrypt'
+gem 'graphql'
 
 
 group :development, :test do
