@@ -10,4 +10,11 @@ Types::QueryType = GraphQL::ObjectType.define do
       "Hello World!"
     }
   end
+
+  field :student do
+    type Types::StudentType
+    argument :id, !types.ID
+    description "Find a Student by ID"
+    resolve ->(obj, args, ctx) { Student.find(args['id']) }
+  end
 end
