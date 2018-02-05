@@ -11,10 +11,16 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
+  field :allStudents do
+    type !types[Types::StudentType]
+    description "Get all students"
+    resolve ->(obj, args, ctx) { Student.all }
+  end
+
   field :student do
     type Types::StudentType
     argument :id, !types.ID
     description "Find a Student by ID"
-    resolve ->(obj, args, ctx) { Student.find(args['id']) }
+    resolve ->(obj, args, ctx) { Student.find_by(id: args['id']) }
   end
 end

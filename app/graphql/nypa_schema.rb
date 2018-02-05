@@ -1,4 +1,5 @@
 NYPASchema = GraphQL::Schema.define do
-  mutation(Types::MutationType)
-  query(Types::QueryType)
+  # debugger
+  mutation Types::MutationType
+  query Types::QueryType
 end

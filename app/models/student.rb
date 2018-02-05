@@ -6,6 +6,8 @@ class Student < ApplicationRecord
   has_many :awards
 
   def ensure_active_status
-    self.active ||= true
+    if self.active.nil?
+      self.active = true
+    end
   end
 end
