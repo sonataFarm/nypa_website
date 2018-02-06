@@ -23,4 +23,10 @@ Types::QueryType = GraphQL::ObjectType.define do
     description "Find a Student by ID"
     resolve ->(obj, args, ctx) { Student.find_by(id: args['id']) }
   end
+
+  field :currentUser do
+    type Types::UserType
+    description "Get the Current User"
+    resolve ->(obj, args, ctx) { ctx[:current_user] }
+  end
 end
