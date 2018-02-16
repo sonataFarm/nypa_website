@@ -9,7 +9,9 @@ class Resolvers::DestroySession < GraphQL::Function
 
       user
     else
-      # no one is logged in. TODO: error handling
+      GraphQL::ExecutionError.new(
+        "Error: no one to log out"
+      )
     end
   end
 end

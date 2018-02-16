@@ -5,13 +5,18 @@ class Resolvers::CreateStudent < GraphQL::Function
   type Types::StudentType
 
   def call(_ctx, args, obj)
-    Student.create!(
+    student = Student.new!(
       first_name: args[:name][:first],
       last_name: args[:name][:last],
       active: args[:active] && true
     )
 
-  rescue ActiveRecord::RecordInvalid
-    nil
+    if student.save
+      student
+    else
+      GraphQL::ExecutionError.new(
+        "Invalid input: {#{student.errors.full_messages.join('; ')}}"
+      )
+    end
   end
 end

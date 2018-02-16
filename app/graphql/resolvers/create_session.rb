@@ -12,7 +12,11 @@ class Resolvers::CreateSession < GraphQL::Function
       login[:password]
     )
 
-    return unless user
+    if !user
+      return GraphQL::ExecutionError.new(
+        "Invalid username/password combination"
+      );
+    end
 
     ctx[:session][:token] = user.reset_session_token!
     user

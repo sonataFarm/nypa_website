@@ -6,6 +6,7 @@ class Resolvers::CreateUser < GraphQL::Function
 
   def call(_obj, args, ctx)
     return unless ctx[:current_user]
+    return unless args[:login] && args[:name]
 
     user = User.new(
       username: args[:login][:username],
@@ -17,7 +18,9 @@ class Resolvers::CreateUser < GraphQL::Function
     if user.save
       user
     else
-      # TODO: error handling
+      GraphQL::ExecutionError.new(
+        "Invalid entry: #{user.errors.full_messages.join(';')}"
+      )
     end
   end
 end
