@@ -5,4 +5,5 @@ Types::StudentType = GraphQL::ObjectType.define do
   field :firstName, !types.String, property: :first_name
   field :lastName, !types.String, property: :last_name
   field :active, !types.Boolean
+  field :awards, types[!Types::AwardType]
 end
