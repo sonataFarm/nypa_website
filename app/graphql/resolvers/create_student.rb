@@ -5,7 +5,7 @@ class Resolvers::CreateStudent < GraphQL::Function
   type Types::StudentType
 
   def call(_ctx, args, obj)
-    student = Student.new!(
+    student = Student.new(
       first_name: args[:name][:first],
       last_name: args[:name][:last],
       active: args[:active] && true
