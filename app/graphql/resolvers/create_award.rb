@@ -1,5 +1,5 @@
 class Resolvers::CreateAward < GraphQL::Function
-  argument :student_id, !Types::StudentType
+  argument :student_id, !types.ID
   argument :competition, !types.String
   argument :placement, !types.String
   argument :date, !Types::DateType
