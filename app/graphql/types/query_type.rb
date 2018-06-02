@@ -11,6 +11,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     resolve ->(obj, args, ctx) { ctx[:current_user] }
   end
 
+
   field :allStudents do
     type !types[Types::StudentType]
     description "Get all students"
