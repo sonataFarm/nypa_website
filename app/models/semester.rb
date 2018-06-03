@@ -1,5 +1,5 @@
 class Semester < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
-  has_many :calendar_dates
+  has_many :calendar_listings
 end

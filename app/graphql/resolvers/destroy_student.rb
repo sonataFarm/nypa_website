@@ -8,8 +8,9 @@ class Resolvers::DestroyStudent < GraphQL::Function
 
     if !student
       GraphQL::ExecutionError.new("Student does not exist")
+    elsif !student.destroy
+      GraphQL::ExecutionError.new("Cannot delete student with existing awards")
     else
-      student.destroy
       true
     end
   end
